@@ -13,7 +13,7 @@ angular.module('todolistApp')
 	 	 console.log('The ' + todo.name + ' has been deleted!');
 	 };
 
-	 this.saveTodo = function (todo) {
-	 	 console.log('The ' + todo.name + ' has been saved!');
+	 this.saveTodos = function (todo) {
+	 	 console.log( todo.length + ' have been saved!');
 	 };
 });

@@ -10,18 +10,11 @@
   </head>
   <body ng-app="todolistApp">
     <h1>My TODOs</h1>
-    <div ng-controller="mainCrtl" class="list">
-      <div class="add"><a href="" ng-click="addTodo()">+ Add a New Task</a></div>
-      <div ng-repeat="todo in todos" ng-class="{'editing': editing, 'edited': todo.edited}" class="item">
-        <input type="checkbox" ng-model="todo.completed">
-        <label ng-click="helloWorld()" ng-hide="editing" class="editing-label">{{todo.name}}</label>
-        <input type="text" ng-model="todo.name" ng-show="editing" ng-blur="editing = false" ng-change="todo.edited = true" class="editing-label">
-        <div class="actions"><a href="" ng-click="editing = !editing">edit</a><a href="" ng-click="saveTodo(todo)"> save</a><a href="" ng-click="deleteTodo(todo, $index)" class="delete"> delete</a></div>
-      </div>{{todos}}
-    </div>
+    <todos></todos>
     <script src="vandor/angular.min.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/services/data.js"></script>
+    <script src="scripts/directives/todos.js"></script>
   </body>
 </html>

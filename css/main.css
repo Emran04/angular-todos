@@ -2,7 +2,7 @@ body {
   color: #2d3339;
   font-family: "Varela Round";
   text-align: center;
-  background: #edeff0;
+  background: #B56482;
   font-size: 16px; }
 
 a {
@@ -12,12 +12,15 @@ a {
 a:hover {
   color: #65a1cc; }
 
+h1 {
+  color: #fff; }
+
 .list {
   background: #fff;
   width: 80%;
   min-width: 500px;
   margin: 80px auto 0;
-  border-top: 40px solid #5a6772;
+  border-top: 40px solid #D86D66;
   text-align: left; }
 
 .list .item {
@@ -67,5 +70,20 @@ a:hover {
 
 .list .add {
   padding: 25px 0 27px 25px; }
+
+input[type="checkbox"] {
+  display: none; }
+
+input[type="checkbox"] + span {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  background: url(checkbox-empty.svg) left top no-repeat;
+  cursor: pointer; }
+
+input[type="checkbox"]:checked + span {
+  background: url(checkbox-filled.svg) left top no-repeat; }
 
 /*# sourceMappingURL=main.css.map */

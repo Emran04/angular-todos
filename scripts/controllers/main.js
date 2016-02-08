@@ -1,7 +1,6 @@
 'use strict';
 angular.module('todolistApp')
 .controller('mainCrtl', function ($scope, dataService) {
-	$scope.helloConsole = dataService.helloConsole;
 
 	$scope.helloNgChange = function () {
 		 console.log('Hello there!! This is helloWorld controller function in mainCrtl') ;
@@ -17,13 +16,18 @@ angular.module('todolistApp')
 		 $scope.todos.splice($index, 1);
 	};
 
-	$scope.saveTodo = function (todo) {
-		dataService.saveTodo(todo);
+	$scope.saveTodos = function () {
+		var filteredTodos = $scope.todos.filter(function (todo) {
+			 if ( todo.edited ) {
+			 	return todo;
+			 };
+		});
+		dataService.saveTodos(filteredTodos);
 	};
 
 	$scope.addTodo = function () {
-		 var todo = {name: "This is a new task"};
-		 $scope.todos.push(todo);
+		 var todo = {name: "Edit here..."};
+		 $scope.todos.unshift(todo);
 	}
 
 })
