@@ -1,0 +1,19 @@
+/* Base Styles
+ ----------------------------------*/
+ *, *:before, *:after {
+ 	box-sizing: border-box;
+ }
+
+ body {
+ 	font-family: $font-lora;
+ 	font-size: 1.6em;
+ 	line-height: 1.5;
+ }
+
+ ul {
+ 	margin: 0;
+ 	padding: 0;
+ }
+
+ /* Typography
+ ----------------------------------*/

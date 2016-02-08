@@ -1,0 +1,28 @@
+doctype html
+html(lang='')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title Angular Basics
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='css/main.css')
+  body(ng-app="todolistApp")
+    h1 My TODOs
+    div.list(ng-controller="mainCrtl")
+      div.add
+        a(href="")(ng-click="addTodo()") + Add a New Task
+      div.item(ng-repeat="todo in todos")(ng-class="{'editing': editing, 'edited': todo.edited}")
+        input(type="checkbox")(ng-model="todo.completed")
+        label.editing-label(ng-click="helloWorld()")(ng-hide="editing") {{todo.name}}
+        input.editing-label(type="text")(ng-model="todo.name")(ng-show="editing")(ng-blur="editing = false")(ng-change="todo.edited = true")
+        div.actions
+          a(href="")(ng-click="editing = !editing") edit
+          a(href="")(ng-click="saveTodo(todo)")  save
+          a.delete(href="")(ng-click="deleteTodo(todo, $index)")  delete
+      {{todos}}
+    script(src='vandor/angular.min.js')
+    script(src='scripts/app.js')
+    script(src='scripts/controllers/main.js')
+    script(src='scripts/services/data.js')
+    
